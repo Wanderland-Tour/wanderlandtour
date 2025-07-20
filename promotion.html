@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>โปรโมชันทัวร์ต่างประเทศ - Wanderland Tour</title>
+    <style>
+        body { margin: 0; font-family: Arial, sans-serif; background: #f6f8fa; }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #2d3e50;
+            padding: 10px 40px;
+        }
+        .logo {
+            color: #fff;
+            font-size: 1.8em;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        .menu {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
+        .menu li { display: inline; }
+        .menu a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: color 0.2s;
+        }
+        .menu a:hover { color: #f9d342; }
+        .banner {
+            width: 100%;
+            height: 270px;
+            background: url('https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 2.2em;
+            font-weight: bold;
+            text-shadow: 2px 2px 8px #000;
+        }
+        .section {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            max-width: 1000px;
+            margin: -50px auto 40px auto;
+            padding: 40px 30px 30px 30px;
+            position: relative;
+            z-index: 2;
+        }
+        .section h2 {
+            color: #2d3e50;
+            margin-bottom: 18px;
+        }
+        .promo-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .promo-card {
+            background: #f9fafc;
+            border-radius: 10px;
+            box-shadow: 0 1px 8px rgba(0,0,0,0.07);
+            padding: 22px;
+            text-align: center;
+        }
+        .promo-card img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+        .promo-card h3 {
+            margin: 0 0 10px 0;
+            color: #2d3e50;
+        }
+        .promo-card p {
+            color: #555;
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
+        .promo-card .promo-price {
+            color: #f9d342;
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+        .promo-card .promo-btn {
+            display: inline-block;
+            background: #2d3e50;
+            color: #fff;
+            padding: 7px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1em;
+            margin-top: 10px;
+            transition: background 0.2s;
+        }
+        .promo-card .promo-btn:hover {
+            background: #f9d342;
+            color: #2d3e50;
+        }
+        .footer {
+            background: #2d3e50;
+            color: #fff;
+            text-align: center;
+            padding: 25px 10px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">WanderlandTour</div>
+        <ul class="menu">
+            <li><a href="index.html">หน้าแรก</a></li>
+            <li><a href="package.html">แพ็กเกจทัวร์</a></li>
+            <li><a href="promotion.html">โปรโมชัน</a></li>
+            <li><a href="#">รีวิวลูกค้า</a></li>
+            <li><a href="#">ติดต่อเรา</a></li>
+        </ul>
+    </nav>
+    <div class="banner">
+        โปรโมชันทัวร์ต่างประเทศ
+    </div>
+    <section class="section">
+        <h2>โปรโมชันทัวร์ต่างประเทศสุดคุ้ม</h2>
+        <div class="promo-list">
+            <div class="promo-card">
+                <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad?auto=format&fit=crop&w=400&q=80" alt="ญี่ปุ่น">
+                <h3>ญี่ปุ่น ซากุระเซลล์ 15%</h3>
+                <p>จองแพ็กเกจญี่ปุ่นช่วงซากุระ รับส่วนลดทันที 15%</p>
+                <div class="promo-price">เหลือเพียง 25,415 บาท</div>
+                <a href="#" class="promo-btn">ดูรายละเอียด</a>
+            </div>
+            <div class="promo-card">
+                <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=400&q=80" alt="ยุโรป">
+                <h3>ยุโรป Summer Sale</h3>
+                <p>เที่ยวยุโรปหน้าร้อน ลดสูงสุด 10,000 บาท สำหรับ 10 ท่านแรก</p>
+                <div class="promo-price">เริ่มต้น 49,900 บาท</div>
+                <a href="#" class="promo-btn">ดูรายละเอียด</a>
+            </div>
+            <div class="promo-card">
+                <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=400&q=80" alt="เกาหลี">
+                <h3>เกาหลี ฟรีบัตรสวนสนุก</h3>
+                <p>จองแพ็กเกจเกาหลี รับฟรีบัตรเข้าสวนสนุก Lotte World</p>
+                <div class="promo-price">เริ่มต้น 25,900 บาท</div>
+                <a href="#" class="promo-btn">ดูรายละเอียด</a>
+            </div>
+            <div class="promo-card">
+                <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="ออสเตรเลีย">
+                <h3>ออสเตรเลีย Early Bird</h3>
+                <p>จองล่วงหน้า 3 เดือน รับส่วนลดพิเศษ 5,000 บาท</p>
+                <div class="promo-price">เริ่มต้น 34,900 บาท</div>
+                <a href="#" class="promo-btn">ดูรายละเอียด</a>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        &copy; 2025 Wanderland Tour. สงวนลิขสิทธิ์ทุกประการ.
+    </footer>
