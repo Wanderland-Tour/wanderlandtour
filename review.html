@@ -12,8 +12,11 @@
         .review { border-bottom: 1px solid #eee; padding: 16px 0; }
         .review:last-child { border-bottom: none; }
         .customer { font-weight: bold; color: #444; }
+        .place { color: #2d7a46; font-style: italic; }
         .stars { color: #f5b301; }
         .comment { margin-top: 8px; color: #333; }
+        .btn-review { display: inline-block; margin: 24px 0 0 0; padding: 10px 24px; background: #2d7a46; color: #fff; border-radius: 4px; text-decoration: none; font-weight: bold; }
+        .btn-review:hover { background: #256236; }
     </style>
 </head>
 <body>
@@ -25,16 +28,24 @@
     <div class="container">
         <h1>รีวิวความพึงพอใจลูกค้า</h1>
         <div class="review">
-            <span class="customer">คุณสมชาย</span>
+            <span class="customer">คุณสมชาย</span> 
+            <span class="place"> (เชียงใหม่)</span>
             <span class="stars">★★★★★</span>
             <div class="comment">บริการดีมาก ประทับใจสุดๆ ครับ</div>
         </div>
         <div class="review">
             <span class="customer">คุณสุภาวดี</span>
+            <span class="place"> (ภูเก็ต)</span>
             <span class="stars">★★★★☆</span>
             <div class="comment">สถานที่สวยงามและสะอาด พนักงานเป็นกันเอง</div>
         </div>
         <div class="review">
             <span class="customer">คุณอนันต์</span>
+            <span class="place"> (กระบี่)</span>
             <span class="stars">★★★★★</span>
             <div class="comment">ประสบการณ์ยอดเยี่ยม จะกลับมาใช้บริการอีกแน่นอน</div>
+        </div>
+        <a class="btn-review" href="review.html">ดูรีวิวลูกค้าทั้งหมด</a>
+    </div>
+</body>
+</html>
