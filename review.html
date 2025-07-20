@@ -2,7 +2,7 @@
 <html lang="th">
 <head>
     <meta charset="UTF-8">
-    <title>รีวิวลูกค้า - Wanderland Tour</title>
+    <title>รีวิวความพึงพอใจลูกค้า</title>
     <style>
         body { font-family: Arial, sans-serif; background: #f9f9f9; margin: 0; }
         nav { background: #2d7a46; padding: 16px; }
@@ -22,21 +22,9 @@
 <body>
     <nav>
         <a href="index.html">หน้าแรก</a>
-        <a href="package.html">แพ็กเกจทัวร์</a>
-        <a href="promotion.html">โปรโมชั่น</a>
         <a href="review.html">รีวิวลูกค้า</a>
-        <a href="contact.html">ติดต่อเรา</a>
+        <!-- เพิ่มเมนูอื่น ๆ ได้ตามต้องการ -->
     </nav>
-    <!-- เพิ่มสไลด์รูปภาพสถานที่ท่องเที่ยว -->
-    <div class="slider" style="max-width:700px; margin:32px auto;">
-        <button class="slider-btn left" onclick="prevSlide()">&#8249;</button>
-        <div class="slides" id="slides" style="display:flex; overflow:hidden; border-radius:8px;">
-            <img src="images/chiangmai.jpg" alt="เชียงใหม่" style="width:100%; height:320px; object-fit:cover;">
-            <img src="images/phuket.jpg" alt="ภูเก็ต" style="width:100%; height:320px; object-fit:cover;">
-            <img src="images/krabi.jpg" alt="กระบี่" style="width:100%; height:320px; object-fit:cover;">
-        </div>
-        <button class="slider-btn right" onclick="nextSlide()">&#8250;</button>
-    </div>
     <div class="container">
         <h1>รีวิวความพึงพอใจลูกค้า</h1>
         <div class="review">
@@ -59,21 +47,5 @@
         </div>
         <a class="btn-review" href="review.html">ดูรีวิวลูกค้าทั้งหมด</a>
     </div>
-    <script>
-        // สไลด์รูปภาพ
-        const slides = document.getElementById('slides');
-        let currentIndex = 0;
-        function showSlide(index) {
-            const total = slides.children.length;
-            if(index < 0) index = total - 1;
-            if(index >= total) index = 0;
-            slides.style.transform = `translateX(-${index * 100}%)`;
-            currentIndex = index;
-        }
-        function prevSlide() { showSlide(currentIndex - 1); }
-        function nextSlide() { showSlide(currentIndex + 1); }
-        slides.style.transition = 'transform 0.5s';
-        showSlide(0);
-    </script>
 </body>
 </html>
