@@ -41,7 +41,7 @@
         .banner {
             width: 100%;
             height: 350px;
-            background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+            background: url('https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -80,6 +80,115 @@
             padding: 25px 10px;
             margin-top: 40px;
         }
+        .trip-slider {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto 40px auto;
+            display: flex;
+            align-items: center;
+        }
+        .trip-slides {
+            display: flex;
+            gap: 30px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 10px 0;
+        }
+        .trip-slides .product {
+            min-width: 270px;
+            max-width: 270px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            padding: 20px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #2d3e50;
+            color: #fff;
+            border: none;
+            font-size: 2em;
+            padding: 0 16px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 2;
+            opacity: 0.85;
+        }
+        .slider-btn.left { left: -10px; }
+        .slider-btn.right { right: -10px; }
+        @media (max-width: 600px) {
+            .trip-slides .product { min-width: 80vw; max-width: 80vw; }
+            .slider-btn.left { left: 0; }
+            .slider-btn.right { right: 0; }
+        }
+        .trip-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            margin-bottom: 40px;
+        }
+        .trip-row-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        .trip-row {
+            display: flex;
+            gap: 30px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            width: 100%;
+            padding: 10px 0;
+        }
+        .product {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            padding: 20px;
+            text-align: center;
+            min-width: 270px;
+            max-width: 270px;
+            flex-shrink: 0;
+        }
+        .product img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 6px;
+            transition: transform 0.3s cubic-bezier(.68,-0.55,.27,1.55), box-shadow 0.2s;
+        }
+        .product:hover img {
+            transform: scale(1.08) translateY(-8px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+        }
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #2d3e50;
+            color: #fff;
+            border: none;
+            font-size: 2em;
+            padding: 0 16px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 2;
+            opacity: 0.85;
+        }
+        .trip-row-wrapper .slider-btn.left { left: -10px; }
+        .trip-row-wrapper .slider-btn.right { right: -10px; }
+        @media (max-width: 900px) {
+            .product { min-width: 45vw; max-width: 45vw; }
+        }
+        @media (max-width: 600px) {
+            .product { min-width: 80vw; max-width: 80vw; }
+            .trip-row-wrapper .slider-btn.left { left: 0; }
+            .trip-row-wrapper .slider-btn.right { right: 0; }
+        }
     </style>
 </head>
 <body>
@@ -97,28 +206,70 @@
         ท่องเที่ยวไปกับ Wanderland Tour
     </div>
     <section class="section">
-        <h2>สินค้าแนะนำ</h2>
-        <div class="products">
-            <div class="product">
-                <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Product 1">
-                <h3>แพ็คเกจภูเขา</h3>
-                <p>สัมผัสธรรมชาติและอากาศบริสุทธิ์กับทริปภูเขาสุดพิเศษ</p>
+        <h2>ทริปสุดคุ้มลด 50%</h2>
+        <div class="trip-grid">
+            <div class="trip-row-wrapper">
+                <button class="slider-btn left" onclick="scrollRow('row1', -1)">&#8249;</button>
+                <div class="trip-row" id="row1">
+                    <div class="product">
+                        <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="ภูเขา">
+                        <h3>แพ็คเกจภูเขา</h3>
+                        <p>สัมผัสธรรมชาติและอากาศบริสุทธิ์กับทริปภูเขาสุดพิเศษ</p>
+                    </div>
+                    <div class="product">
+                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&q=80" alt="ทะเล">
+                        <h3>แพ็คเกจทะเล</h3>
+                        <p>พักผ่อนริมทะเล น้ำใส หาดทรายขาว กับกิจกรรมมากมาย</p>
+                    </div>
+                    <div class="product">
+                        <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="เมือง">
+                        <h3>แพ็คเกจเมือง</h3>
+                        <p>ท่องเที่ยวเมืองใหญ่ ชมวัฒนธรรมและสถานที่สำคัญ</p>
+                    </div>
+                    <div class="product">
+                        <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad?auto=format&fit=crop&w=400&q=80" alt="ญี่ปุ่น">
+                        <h3>แพ็คเกจญี่ปุ่น</h3>
+                        <p>ชมซากุระ เที่ยวโตเกียว เกียวโต และโอซาก้า</p>
+                    </div>
+                </div>
+                <button class="slider-btn right" onclick="scrollRow('row1', 1)">&#8250;</button>
             </div>
-            <div class="product">
-                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&q=80" alt="Product 2">
-                <h3>แพ็คเกจทะเล</h3>
-                <p>พักผ่อนริมทะเล น้ำใส หาดทรายขาว กับกิจกรรมมากมาย</p>
-            </div>
-            <div class="product">
-                <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Product 3">
-                <h3>แพ็คเกจเมือง</h3>
-                <p>ท่องเที่ยวเมืองใหญ่ ชมวัฒนธรรมและสถานที่สำคัญ</p>
+            <div class="trip-row-wrapper">
+                <button class="slider-btn left" onclick="scrollRow('row2', -1)">&#8249;</button>
+                <div class="trip-row" id="row2">
+                    <div class="product">
+                        <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=400&q=80" alt="ยุโรป">
+                        <h3>แพ็คเกจยุโรป</h3>
+                        <p>สัมผัสเมืองสุดโรแมนติก ปารีส เวนิส สวิตเซอร์แลนด์</p>
+                    </div>
+                    <div class="product">
+                        <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=400&q=80" alt="เกาหลี">
+                        <h3>แพ็คเกจเกาหลี</h3>
+                        <p>เที่ยวโซล ชมพระราชวัง สนุกกับสวนสนุกและช้อปปิ้ง</p>
+                    </div>
+                    <div class="product">
+                        <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="ออสเตรเลีย">
+                        <h3>แพ็คเกจออสเตรเลีย</h3>
+                        <p>ชมซิดนีย์ โกลด์โคสต์ และธรรมชาติสุดอลังการ</p>
+                    </div>
+                    <div class="product">
+                        <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="มัลดีฟส์">
+                        <h3>แพ็คเกจมัลดีฟส์</h3>
+                        <p>พักรีสอร์ทกลางทะเล น้ำใส หาดทรายขาว ดำน้ำชมปะการัง</p>
+                    </div>
+                </div>
+                <button class="slider-btn right" onclick="scrollRow('row2', 1)">&#8250;</button>
             </div>
         </div>
     </section>
-   
+    <script>
+        function scrollRow(rowId, direction) {
+            const row = document.getElementById(rowId);
+            row.scrollBy({ left: direction * 320, behavior: 'smooth' });
+        }
+    </script>
     <footer class="footer">
-        &copy; 2025 Wanderland Tour. สงวนลิขสิทธิ์ทุกประการ.
+      
     </footer>
 </body>
 </html>
